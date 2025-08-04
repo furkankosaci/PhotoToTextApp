@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoğraftan Metne Çevirici</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.1.1/tesseract.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📸 Fotoğraftan Metne Çevirici</h1>
+            <p>Görüntülerdeki metinleri kolayca çıkarın ve kopyalayın</p>
+        </div>
+
+        <div class="language-selector">
+            <label for="languageSelect">Dil Seçimi:</label>
+            <select id="languageSelect">
+                <option value="tur">Türkçe</option>
+                <option value="eng">English</option>
+                <option value="tur+eng">Türkçe + English</option>
+            </select>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Fotoğraf yüklemek için tıklayın veya sürükleyip bırakın</div>
+            <div class="upload-subtext">JPG, PNG, GIF formatları desteklenir</div>
+        </div>
+
+        <input type="file" id="fileInput" accept="image/*">
+
+        <div class="preview-container">
+            <img id="previewImage" class="preview-image" alt="Önizleme">
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">İşleniyor...</div>
+        </div>
+
+        <div class="error" id="errorMessage"></div>
+        <div class="success" id="successMessage"></div>
+
+        <div class="result-container" id="resultContainer">
+            <textarea id="resultText" class="result-textarea" placeholder="Çıkarılan metin burada görünecek..."></textarea>
+            <button class="copy-button" id="copyButton">📋 Metni Kopyala</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
